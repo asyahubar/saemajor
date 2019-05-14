@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Controller@home');
+
+// So, each file types handling would have their own routes
+
+// xdxf
+Route::get('/xdxf', 'XdxfController@index')->name('xdxf-form');
+Route::post('/xdxf', 'XdxfController@create')->name('xdxf-save');
+
+// pbi
+
+// tei
+
+// dic

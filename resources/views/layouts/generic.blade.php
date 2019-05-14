@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    <h1>Hello!</h1>
+
     <main>
         @yield('form')
     </main>
