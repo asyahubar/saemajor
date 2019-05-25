@@ -10,23 +10,4 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    public function home() {
-        return view('form');
-    }
-
-    public function store()
-    {
-        /*
-         * the route receives data from the form
-         * that include dictionary file(s)
-         *
-         * call for helping methods
-         *
-         * essentially with Storage class
-         * saves the whole file into a var
-         * with regex prepares it for db
-         * saves to db
-         */
-    }
 }
