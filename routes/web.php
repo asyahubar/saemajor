@@ -21,10 +21,7 @@ Route::get('/test', 'PagesController@test')->name('test');
 Route::get('/xdxf', 'XdxfController@index')->name('xdxf-form');
 Route::post('/xdxf', 'XdxfController@store')->name('xdxf-save');
 
-// pbi
+// dsl
+Route::get('/dsl', 'DslController@index')->name('dsl-form');
+Route::post('/dsl', 'DslController@store')->name('dsl-save');
 
-// tei
-
-// dic
-Route::get('/dic', 'DicController@index')->name('dic-form');
-Route::post('/dic', 'DicController@store')->name('dic-save');

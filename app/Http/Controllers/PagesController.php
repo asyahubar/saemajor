@@ -17,7 +17,6 @@ class PagesController extends Controller
 
     public function test()
     {
-        $result = hex2bin('5344494301010000aac90200fcff0000000000000000000000000000000000000000000080000000b006000038070000');
-        return $result;
+        
     }
 }
