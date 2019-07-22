@@ -15,7 +15,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: lightyellow;
+                background-color: lightgray;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -70,7 +70,7 @@
         <h1>Choose your file' format</h1>
         <ul>
             <li><a href="{{@route('xdxf-form')}}">.xdxf</a></li>
-            <li><a href="{{@route('dic-form')}}">.dic</a> (currently inactive)</li>
+            <li><a href="{{@route('dsl-form')}}">.dsl</a></li>
         </ul>
     </body>
 </html>

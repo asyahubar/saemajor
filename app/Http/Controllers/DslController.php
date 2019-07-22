@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Converters\XdxfConverter;
 use Facades\App\Converters\DicConverter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DslController extends Controller
 {
@@ -29,11 +31,17 @@ class DslController extends Controller
         }
 
         // format convert_to
+        $result = "";
         $convert_to = $request->format;
         switch ($convert_to) {
             case 'dic':
                 $result = DicConverter::convert($file, 'dsl');
+                return Storage::download('dicconverter/uploads/' . $result, 'dict.dic');
+                break;
+            case 'xdxf':
+                $result = DslConverter::to_xdxf($file);
                 break;
         }
+
     }
 }

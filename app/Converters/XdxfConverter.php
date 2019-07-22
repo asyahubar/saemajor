@@ -22,4 +22,17 @@ class XdxfConverter
         // TODO: additional check if the format of the lang_from is ISO 639-3
         return $lang_from;
     }
+
+    public function to_dsl()
+    {
+        $original_file = $file;
+
+        $newName = Str::random();
+        $newFullName = $newName . ".xdxf";
+        $path = Storage::putFileAs('uploads', $original_file, $newFullName);
+
+        // TODO: logic how .xdxf would turn into .dsl
+
+        dd();
+    }
 }

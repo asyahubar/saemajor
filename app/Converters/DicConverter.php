@@ -23,12 +23,13 @@ class DicConverter
                 $lang_from = XdxfConverter::get_lang_from($newFullName);
                 break;
             case 'dsl':
-                $lang_from = DslConverter::get_lang_from($newFullName);
+                $lang_from = DslConverter::get_lang_from($path);
                 break;
         }
 
         $command = storage_path('app\\dicconverter\\converter.exe') . " " . storage_path('app\\dicconverter\\uploads\\') . $newFullName . " " . storage_path('app\\dicconverter\\') . $lang_from;
         $conversion = exec($command, $output, $return_var);
-        dd($output);
+
+        return $newName . '.dic';
     }
 }
