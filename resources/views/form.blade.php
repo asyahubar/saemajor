@@ -21,8 +21,11 @@ if (url()->full() === route('xdxf-form')) {
         @csrf
 
         <label for="{{ $o_format }}"></label>
-        <input type="file" required multiple name="{{ $o_format }}" id="{{ $o_format }}">
-        {{-- TODO: new file input if 'dsl' for .abrv file --}}
+        <input type="file" required name="{{ $o_format }}" id="{{ $o_format }}">
+        @if ($o_format === 'dsl')
+            <label for="abrv">Add abbreviations file</label>
+            <input type="file" name="abrv" id="abrv">
+        @endif
 
         <label for="format">Convert to:</label>
         <select name="format" id="format">

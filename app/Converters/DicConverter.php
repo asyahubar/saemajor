@@ -3,7 +3,7 @@
 namespace App\Converters;
 
 use Facades\App\Converters\XdxfConverter;
-use Facades\App\Converters\DslConverter;
+use Facades\App\Readers\DslReader;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -23,7 +23,7 @@ class DicConverter
                 $lang_from = XdxfConverter::get_lang_from($newFullName);
                 break;
             case 'dsl':
-                $lang_from = DslConverter::get_lang_from($path);
+                $lang_from = DslReader::get_lang_from($path);
                 break;
         }
 

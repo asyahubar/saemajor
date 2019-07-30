@@ -13,7 +13,8 @@
         "gettext/gettext": "^4.6",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "matriphe/iso-639": "^1.2"
+        "matriphe/iso-639": "^1.2",
+        "ext-xmlwriter": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
