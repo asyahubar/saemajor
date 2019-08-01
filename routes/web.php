@@ -15,8 +15,6 @@ Route::get('/', 'PagesController@home');
 Route::get('/result', 'PagesController@result')->name('result');
 Route::get('/test', 'PagesController@test')->name('test');
 
-// So, each file types handling would have their own routes
-
 // xdxf
 Route::get('/xdxf', 'XdxfController@index')->name('xdxf-form');
 Route::post('/xdxf', 'XdxfController@store')->name('xdxf-save');

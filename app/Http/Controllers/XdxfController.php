@@ -19,7 +19,12 @@ class XdxfController extends Controller
     }
 
     /**
+     * Manages conversion for xdxf files
+     * starting from initial request
+     * to returning a newly written file
+     *
      * @param Request $request
+     * @return mixed
      */
     public function store(Request $request)
     {
@@ -39,9 +44,11 @@ class XdxfController extends Controller
         switch ($convert_to) {
             case 'dic':
                 $result = DicConverter::convert($file, 'xdxf');
+                return Storage::download('dicconverter/uploads/' . $result, 'dict.xdxf');
                 break;
             case 'dsl':
-                // pass file to DslConverter
+                $result = XdxfConverter::to_dsl($file);
+                return Storage::download($result, 'dict.dsl');
                 break;
         }
 

@@ -10,6 +10,12 @@ use Illuminate\Support\Str;
 
 class XdxfWriter
 {
+    /**
+     * Creates a new xdxf file & returns a path to it
+     *
+     * @param $data
+     * @return string
+     */
     public function put($data)
     {
         $new_file_path = "new/" . Str::random() . ".xdxf";
@@ -56,7 +62,13 @@ class XdxfWriter
     }
 
 
-
+    /**
+     * Return meta_info tag as a string
+     *
+     * @param string $title
+     * @param null $abbreviations_file
+     * @return string
+     */
     public function get_meta_info_tag($title, $abbreviations_file = NULL)
     {
         $meta_info = '<meta_info>' . PHP_EOL
@@ -138,7 +150,6 @@ class XdxfWriter
     public function get_abbreviations_tag($abrv_file)
     {
         $arr = DslReader::get_abbreviations($abrv_file);
-//        dd($arr);
 
         $abbreviations_tag = '';
         foreach ($arr as $key => $value)
@@ -156,6 +167,6 @@ class XdxfWriter
 
     public function get_card_tags($arr)
     {
-        return '';
+        return $this->get_closing_xdxf_tag();
     }
 }

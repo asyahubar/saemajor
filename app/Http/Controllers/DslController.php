@@ -19,6 +19,15 @@ class DslController extends Controller
         return view('form');
     }
 
+
+    /**
+     * Manages conversion for dsl files
+     * starting from initial request
+     * to returning a newly written file
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function store(Request $request)
     {
         $file = $request->dsl;

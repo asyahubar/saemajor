@@ -10,6 +10,14 @@ use Illuminate\Support\Str;
 
 class DslConverter
 {
+    /**
+     * Parses dsl to xdxf
+     * Returns a path to the file as a string
+     *
+     * @param $main_file
+     * @param $abrv_file
+     * @return string
+     */
     public function to_xdxf($main_file, $abrv_file = NULL)
     {
         $main_path = $this->save_file($main_file);
@@ -40,7 +48,7 @@ class DslConverter
 
 
     /**
-     * Saves a file
+     * Saves a file into uploads folder
      *
      * @param $file
      * @return string
@@ -56,60 +64,4 @@ class DslConverter
         return $path;
     }
 
-
-
-    /*
-     * for development purposes
-     */
-    public function test()
-    {
-        $dsl = "#NAME	\"Business (En-Uk)\"
-#INDEX_LANGUAGE	\"English\"
-#CONTENTS_LANGUAGE	\"Ukrainian\"
-\(s\)
-	[m1][p][i][c][com][lang id=1033]????. ???[/i][/p] (signed)[/lang][/com][/c][/m]
-	[m1][trn](??????) [com]([i]???????? ?????????[/i])[/com][/trn][/m]
-	
-/d
-	[m1][p][i][c][com][lang id=1033]????. ???[/i][/p] /day[/lang][/com][/c][/m]
-	[m1][trn]?? ????[/trn][/m]
-	
-3 Ds
-	[m1][c][com][lang id=1033]= [ref]three-D jobs[/ref][/lang][/com][/c][/m]
-	
-A";
-        $abrv = '#NAME	"Abbrev"
-#INDEX_LANGUAGE	"English"
-#CONTENTS_LANGUAGE	"Ukrainian"
-inform.
-	неофіційно
-v.
-	означає дієслово
-бірж.
-	біржовий вислів
-бухг.
-	бухгалтерський термін
-ек.
-	економіка
-екол.
-	природоохоронний термін
-розм.
-	неофіційне вживання
-скор.
-	скорочення
-скор. від
-	скорочення від
-стат.
-	статистика
-страх.
-	страхова справа
-юр.
-	юридичний термін';
-
-
-        $result = DslReader::get_header_and_cards($dsl);
-        extract($result);
-
-        return 'hi';
-    }
 }

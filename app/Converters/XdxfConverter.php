@@ -23,7 +23,7 @@ class XdxfConverter
         return $lang_from;
     }
 
-    public function to_dsl()
+    public function to_dsl($file)
     {
         $original_file = $file;
 

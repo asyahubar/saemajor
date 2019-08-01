@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class DslReader
 {
     /**
-     * Function accepts path to dictionary file to
+     * Function accepts path to a dictionary file to
      * separate and compact it into 2 arrays in
      * a format that is ready for conversion
      *
@@ -68,9 +68,9 @@ class DslReader
 
 
     /**
-     * Returns abbreviation in key-value array
+     * Returns abbreviations in a numeric array
      *
-     * @param $abrv_file
+     * @param $path
      * @return array
      */
     public function get_abbreviations($path)
@@ -118,6 +118,7 @@ class DslReader
 
     /**
      * Returns an origin language as a ISO-639-3 code string
+     *
      * @param $path
      * @return string
      */
@@ -142,7 +143,7 @@ class DslReader
 
 
     /**
-     * Converts string to UTF-8 encoding
+     * Transcodes a string to UTF-8 encoding
      *
      * @param string|array $file
      * @return bool|false|string

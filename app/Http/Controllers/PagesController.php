@@ -18,7 +18,6 @@ class PagesController extends Controller
 
     public function test()
     {
-        $test = DslConverter::test();
-        dd($test);
+
     }
 }
